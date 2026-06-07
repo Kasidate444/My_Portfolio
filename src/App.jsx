@@ -44,9 +44,9 @@ const PROJECTS = [
     subtitle: "E-commerce & Music Marketplace",
     desc: "Full-stack MERN e-commerce platform built as a team final project during JSD12 bootcamp. Features product listings, cart, and checkout flow.",
     tags: ["MongoDB", "Express", "React", "Node.js"],
-    type: "Final Project",
+    type: "Final Group Project",
     accent: "#7C3AED",
-    link: "#",
+    link: "https://group-project-6-react-alpha.vercel.app/",
   },
   // {
   //   title: "React Assessment",
@@ -100,21 +100,21 @@ const EXPERIENCE = [
     role: "Junior Software Developer",
     company: "Generation Thailand",
     period: "Mar 2026 – Jun 2026",
-    desc: "Completed JSD12 bootcamp program — full-stack web development with MERN stack, agile workflow, and real team projects.",
+    desc: "Completed JSD12 bootcamp program — Full-stack web development with MERN stack, agile workflow, and real team projects.",
     current: true,
   },
   {
     role: "Plant Engineer",
     company: "Sumitomo Electric Wintec (Thailand) Co., Ltd.",
     period: "Nov 2018 – Dec 2025",
-    desc: "7 years managing plant operations, cross-department coordination, and critical decision-making in manufacturing environments.",
+    desc: "Over 6 years managing plant operations, cross-department coordination, and critical decision-making in manufacturing environments.",
     current: false,
   },
   {
     role: "Internship Engineer",
     company: "Femtobit Co., Ltd.",
     period: "2017",
-    desc: "Engineering internship gaining hands-on industrial experience.",
+    desc: "Internship engineer gaining hands-on industrial experience.",
     current: false,
   },
 ];
@@ -188,7 +188,7 @@ export default function Portfolio() {
           style={{
             fontFamily: "'Syne', sans-serif",
             fontWeight: 800,
-            fontSize: 18,
+            fontSize: 24,
             color: "#A78BFA",
             letterSpacing: "0.02em",
           }}
@@ -239,7 +239,7 @@ export default function Portfolio() {
               marginBottom: 32,
             }}
           >
-            ✦ JSD12 Graduate · MERN Stack Developer
+            ✦ JSD12 · GENERATION THAILAND
           </div>
           <h1
             className="hero-name"
@@ -475,16 +475,22 @@ export default function Portfolio() {
           style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}
         >
           {PROJECTS.map((p, i) => (
-            <div
+            <a
               key={p.title}
+              href={p.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="proj-card fade-in"
               style={{
+                display: "block", // Ensures it behaves like a block element card
                 background: "rgba(255,255,255,0.02)",
                 border: `1px solid rgba(255,255,255,0.07)`,
                 borderRadius: 16,
                 padding: 28,
                 animationDelay: `${0.08 * i}s`,
                 borderTop: `2px solid ${p.accent}40`,
+                textDecoration: "none", // Prevents standard link underlines
+                color: "inherit", // Keeps your existing text colors
               }}
             >
               <div
@@ -538,7 +544,7 @@ export default function Portfolio() {
                   </span>
                 ))}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
@@ -755,12 +761,12 @@ export default function Portfolio() {
               value: "Kasidate444",
               href: "https://github.com/Kasidate444",
             },
-            {
-              icon: <FaMapMarkerAlt />,
-              label: "Location",
-              value: "Samut Prakan, Thailand",
-              href: null,
-            },
+            // {
+            //   icon: <FaMapMarkerAlt />,
+            //   label: "Location",
+            //   value: "Samut Prakan, Thailand",
+            //   href: null,
+            // },
           ].map((c) => (
             <a
               key={c.label}
